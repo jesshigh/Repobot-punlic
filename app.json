@@ -1,0 +1,71 @@
+{
+  "name": "Dante-Userbot",
+  "description": "[Dante-Userbot] Selamat pakai, Luh songong gw Banting",
+  "logo": "https://mallucampaign.in/images/img_1710090470.jpg",
+  "keywords": ["telegram", "userbot", "Dante-Userbot", "modular", "python"],
+  "repository": "https://github.com/Vooyage21/py.git",
+  "stack": "container",
+  "env": {
+        "BOT_TOKEN": {
+            "description": "",
+            "required": true
+        },
+        "API_ID": {
+            "description": "",
+            "required": true
+        },
+        "BLACKLIST_CHAT": {
+            "description": "",
+            "required": false,
+            "value": "-1002073763400"
+        },
+        "API_HASH": {
+            "description": "",
+            "required": true
+        },
+        "LOGS_MAKER_UBOT": {
+            "description": "",
+            "required": true
+        },
+        "OWNER_ID": {
+            "description": "",
+            "required": false,
+            "value": "936922513"
+        },
+        "MONGO_URL": {
+            "description": "",
+            "required": true
+        },
+        "COMMAND": {
+            "description": "",
+            "required": true
+        },
+        "MAX_BOT": {
+            "description": "",
+            "required": true
+        }           
+      },
+"addons": [
+    {
+    "plan": "heroku-postgresql",
+      "options": {
+        "version": "15"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ],
+
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
