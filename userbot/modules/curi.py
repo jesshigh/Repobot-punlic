@@ -58,14 +58,21 @@ async def pencuri(client, message):
     except Exception as e:
         print(e)
 
+
 @CB.UBOT("qris", sudo=False)
 async def send_qris(client, message):
+    if len(message.command) < 2:
+        await message.reply("Mohon sertakan nominalnya. Contoh: .qris 50000")
+        return
+    
+    nominal = message.command[1]
     loading_msg = await message.reply("Loading.......")
     qris_image_url = "https://telegra.ph/file/d3819574afbe4fe2712e8.jpg"
+    caption = f"Silahkan TF Dengan Nominal {nominal} Ke Ghostxmods"
 
     try:
         await asyncio.sleep(2)  # Simulate some loading time
-        await client.send_photo(message.chat.id, qris_image_url)
+        await client.send_photo(message.chat.id, qris_image_url, caption=caption)
     except Exception as e:
         print(e)
     finally:
