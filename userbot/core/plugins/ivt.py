@@ -81,7 +81,7 @@ async def cancel_cmd(client, message):
         await message.reply_text(e)
 
 async def ongjir_cmd(client, message):
-    await message.reply(f"Aktif mas dante <emoji id=5343853422703550770>😎</emoji>")
+    await message.reply(f"Aktif Nih Ghost <emoji id=5343853422703550770>👻</emoji>")
 
 async def devsreact_cmd(client, message):
     emoji = ["🔥", "😭", "😎", "🗿", "😈"]
