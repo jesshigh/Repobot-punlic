@@ -35,7 +35,22 @@ connection_handler = ConnectionHandler()
 logger.addHandler(stream_handler)
 logger.addHandler(connection_handler)
 
-aiosession = ClientSession()
+import asyncio
+from aiohttp import ClientSession
+
+# Assuming 'aiosession' is used later in the code, you'll need to create it within an async function.
+async def create_aiosession():
+    async with ClientSession() as session:
+        return session  # You can return or use 'session' here based on your bot's logic
+
+# Main function that runs the event loop
+async def main():
+    global aiosession
+    aiosession = await create_aiosession()  # Await the session creation
+    # Continue with the rest of your bot logic here
+
+if __name__ == "__main__":
+    asyncio.run(main())  # This ensures the event loop is running
 
 LOOP = asyncio.get_event_loop_policy()
 event_loop = LOOP.get_event_loop()
