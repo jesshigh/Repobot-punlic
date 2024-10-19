@@ -30,5 +30,5 @@ emoji
 Pillow==9.5.0
 uvloop
 numpy==1.26.4
-Crypto==1.2.5
+pycryptodome
 opencv-python-headless==4.10.0.82
