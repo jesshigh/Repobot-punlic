@@ -32,3 +32,4 @@ uvloop
 numpy
 pycryptodome
 opencv-python-headless
+pyromod
